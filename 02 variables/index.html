@@ -1,18 +1,48 @@
 <html>
-	<head></head>
+	<head>Variables Tutorial</head>
 	<body>
-		Variables
-		<script>
+	<script>
+		//declaring a new variable
+		var newVar;
+		
+		//declaring and assigning a new variable
+		var b = 10;
+		//variables are case sensitives
 		var a;
 		var A;
-		var b = 10;
-		a = 100;
-		A = 99;
-
-		alert(A);
-
-		var text = "Your Name Here";
+		
+		//assigning value to an existing variable
+		newVar = 20;
+		alert("NewVar Value:"+ newVar + "\n Variable b is" + b);
+		
+		// If I assign b to newvar. Is this a reference?
+		newVar = b;
+		//variable b is
+		alert("Variable b is" + b);
+		//variable a is
+		alert("Variable newVar is" + newVar);
+		
+		//if it is a reference, then if I increment b, newVar's value will also be incremented
+		b++;
+		alert("NewVar Value:" + newVar + "\n Variable b is" + b);
+		if (newVar != b) {
+			alert("Assignment of b to NewVar is not a reference \nas newVar retains the value that was referenced");
+			
+		}
+		else{
+			alert("Assignment of two variables is a reference variables");
+		}
+		
+		var text="Textual String here";
 		alert(text);
+		
+		// variables are case sensitives!
+		a=100;
+		A=101;
+		A=A+10;
+		alert(a);
+		alert(A);
 		</script>
+
 	</body>
 </html>
