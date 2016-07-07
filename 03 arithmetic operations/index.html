@@ -1,34 +1,40 @@
 <html>
-	<head></head>
+	<head>
+		
+	</head>
 	<body>
 		Arithmetic operations
-		<script>
-		//addition
-		var a = 1000;
-		var b = a + 200 + 100;
-		//alert(b);
-
-		//substraction
-		var c = 100 - 50;
-		//alert(c);
-
-		//multiplication
-		var m = c * 10;
-		//alert(m);
-
-		//division
-		var d = 500 / 2;
-		//alert(d);
-
-		//mix
-		var combo = (100 + 50) / 2 * 10;
-		//alert(combo);
-
-		//simple calculator
-		//from celsius to F
-		// °C  x  9/5 + 32 = °F
-		var C = 25;
-		var F = C * 9 / 5 + 32;
+				<p id="output"> Test input</p>
+	<script>
+			//addition
+			var a = 1000;
+			var b = a + 200 + 100;
+			alert(b);
+			document.getElementById("output").innerHTML= b;
+			//substraction
+			var c = 100 - 50;
+			alert(c);
+			document.getElementById("output").innerHTML = c;
+	
+			//multiplication
+			var m = c * 10;
+			alert("multiplication of 50 * 10:" + m);
+	
+			//division
+			var d = 500 / 2;
+			alert("Division of 500 /2:" + d);
+	
+			//mix
+			var combo = (100 + 50) / 2 * 10;
+			alert("Combination multiplication, using bodmas: " + combo);
+	
+			//simple calculator
+			//from celsius to F
+			// °C  x  9/5 + 32 = °F
+			var C = 25;
+			var F = C * 9 / 5 + 32;
+			alert(C + "Degreee Celsius to " +  "Fahrenhei is: " + F );
 		</script>
+
 	</body>
 </html>
