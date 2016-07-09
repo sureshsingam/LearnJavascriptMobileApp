@@ -13,16 +13,54 @@
 			color: 'blue'
 		};
 
+		// creating empty objects
+		var player2 = {};
+		console.log(player2);
+		
+		// Defining new player
+		var player3 = {
+			name:"Suresh",
+			energy:100,
+			lives:3,
+			x:0,y:0,
+			color:"blue"
+			};
+			console.log(player3);
+			
+			//accessing  player 3 properties. This can be done two way, array like call
+			console.log(player3['name']);
+			
+			// Player property lives can also be accessed through the object call parameter
+			console.log(player3.name);
+		
+		// I can change the value of a property.
+		player3.energy=400;
+		console.log("New Energy value is " + player3.energy);
 		console.log(player);
-
 		console.log(player.name);
-		console.log(player['color']);
+		console.log(player.color);
 
+		// Playing with string parameters. How can I transform strings.
+		/*
+		 * Get the player name and change it to capitals
+		 */
+		var str = player3.name;
+		console.log("value of str " + str);
+		str=str.toUpperCase();
+		console.log("Upper Case name is: " + str);
 		player.name = 'some other name';
 		console.log(player);
-
+		//Assign a new key value pair, or assign a new property to the object
+		player3.longString = 'This is a very long text';
+		// Now we shall play with a bit of substring
+		var slicedStr = player3.longString.slice(10);
+		//playing with concat method
+		console.log("sliced string is ".concat('"',slicedStr,'"'));
 		player.friend = {name: 'Pablo'};
 		player.weapon = 'sword';
+		console.log(player.weapon);
+		console.log(player.friend);
 		</script>
+		
 	</body>
 </html>
