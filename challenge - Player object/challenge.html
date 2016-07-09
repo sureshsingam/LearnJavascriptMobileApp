@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>JavaScript Programming | ZENVA.com</title>
+  <title>JavaScript Programming | ZENVA.com Challenge Answered by Suresh J</title>
   <meta name="viewport" content="width=device-width, user-scalable=no" />
   <style>
     canvas {
@@ -11,7 +11,7 @@
 </head>
 <body>
   <h1>Challenge - Add a Player Object</h1>
-  <canvas id="mycanvas" width="640" height="360" ></canvas>
+  <canvas id="mycanvas" width="640" height="360"></canvas>
   <script>
     window.addEventListener("load",function() {
       
@@ -69,7 +69,14 @@
       create it bellow, outside of this commenting area!
       */
 
-
+// This challenge exercise has been answered by Suresh.
+var player ={
+    x:10, y:160,
+    speedX:2.5,
+    isMoving:0,
+    w:40,
+    h:40   
+  };
 
 
 
@@ -79,18 +86,18 @@
         y: 160,
         w: 50,
         h: 36
-      }
+      };
       
 
       var sprites = {};
 
       var movePlayer = function() {
         player.isMoving = true;
-      }
+      };
 
       var stopPlayer = function() {
         player.isMoving = false;
-      }
+      };
       
       //grab the canvas and context
       var canvas = document.getElementById("mycanvas");
@@ -205,7 +212,7 @@
         var closeOnWidth = Math.abs(rect1.x - rect2.x) <= Math.max(rect1.w, rect2.w);
         var closeOnHeight = Math.abs(rect1.y - rect2.y) <= Math.max(rect1.h, rect2.h);
         return closeOnWidth && closeOnHeight;
-      }
+      };
 
       //initial kick
       load();
