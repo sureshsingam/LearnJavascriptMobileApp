@@ -12,11 +12,37 @@
 			console.log(a);
 
 			shoppingList[2] = 'chicken';
-
+			//This seems that we are creating an array of objects
 			var enemies = [
-				{x: 10, y: 10, color: 'blue'},
-				{x: 100, y: 100, color: 'red'}
+				{x: 10, y: 10, color: 'blue', lives:3},
+				{x: 100, y: 100, color: 'red',lives:1}
 			];
+			// access the first object.
+			console.log(enemies[0]);
+			//To get length of the enemies object
+			var enLength = enemies.length;
+			console.log("Length of enemies array" + enLength);
+			enemies.sort();
+			//what happens when you sort an array of objects.
+			console.log(enemies.sort());
+			//seems to sort by the color blue, but I want to sort it by the remaining lives
+			// use the sort with the comparison function built in.
+			var sortedArray = enemies.sort(function(a,b) {return parseInt(a.lives)-parseInt(b.lives);});
+			console.log("Sorted Array" + sortedArray);
+			console.log(sortedArray[0].lives + "," + sortedArray[1].lives);
+			
+			// can we add stuff to an array? yes through the push method, but this adds it to the end of the array
+			enemies.push({x:20,y:50,color:"green",lives:4});
+			console.log("New element added to enemies array" + enemies);
+			
+			//getting an element out of an array
+			var poppedObject = enemies.pop();
+			console.log("Popped array object is: " + poppedObject);
+			
+			// Remaining objects in array
+			console.log("Remaining OBjects: " + enemies);
+			// value of is supposed to return the array itself.
+			console.log(enemies.valueOf());
 
 			var l = [1, 'asdfasdf', 22.54, {name: 'hello'}];
 
