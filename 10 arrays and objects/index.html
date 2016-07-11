@@ -12,6 +12,7 @@
 			];
 
 			enemies[3].energy = 12;
+			enemies[4].y = 60;
 
 
 			var player = {
@@ -22,6 +23,10 @@
 
 			//add a new weapon
 			player.weapons.push('axe');
+			//adding new property to the object
+			player.lives=3;
+			player.weapons.pop();
+			player.weapons.push("Thor Hammer");
 
 			console.log(player);
 		</script>

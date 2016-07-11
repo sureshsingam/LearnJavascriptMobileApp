@@ -64,7 +64,21 @@
           speedY: 5,
           w: 40,
           h: 40
-        }
+        },
+        {
+          x: 300, //x coordinate
+          y: 100, //y coordinate
+          speedY: 1, //speed in Y
+          w: 40, //width
+          h: 40 //height
+        },
+        {
+          x: 140, //x coordinate
+          y: 300, //y coordinate
+          speedY: 1, //speed in Y
+          w: 40, //width
+          h: 40 //height
+        }        
       ];
 
       //the player object
@@ -83,17 +97,17 @@
         y: 160,
         w: 50,
         h: 36
-      }
+      };
 
       var sprites = {};
 
       var movePlayer = function() {
         player.isMoving = true;
-      }
+      };
 
       var stopPlayer = function() {
         player.isMoving = false;
-      }
+      };
       
       //grab the canvas and context
       var canvas = document.getElementById("mycanvas");
@@ -208,7 +222,7 @@
         var closeOnWidth = Math.abs(rect1.x - rect2.x) <= Math.max(rect1.w, rect2.w);
         var closeOnHeight = Math.abs(rect1.y - rect2.y) <= Math.max(rect1.h, rect2.h);
         return closeOnWidth && closeOnHeight;
-      }
+      };
 
       //initial kick
       load();
