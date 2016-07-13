@@ -2,21 +2,21 @@
 <head>
   <title>Canvas</title>
   <style>
-    canvas {border: 1px solid black;}
+    #myCanvas {border: 1px dashed red;}
   </style>
 </head>
 <body>
   <h1>Canvas</h1>
-  <canvas width="200" height="200" id="myCanvas"></canvas>
+  <canvas width="600" height="800" id="myCanvas"></canvas>
   <script>
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
 
     ctx.fillStyle = "rgb(200, 0, 200)";
-    ctx.fillRect(50, 40, 100, 30);
+    ctx.fillRect(300, 300, 100, 100);
 
     ctx.fillStyle = "rgb(100, 100, 200)";
-    ctx.fillRect(50, 140, 100, 30);
+    ctx.fillRect(100, 500, 300, 300);
   </script> 
 </body>
 </html>
