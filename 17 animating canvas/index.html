@@ -7,41 +7,62 @@
 </head>
 <body>
   <h1>Animated Canvas</h1>
-  <canvas id="mycanvas" width="500" height="300" ></canvas>
+  <canvas id="myCanvas" width="500" height="300" ></canvas>
   <script>
 
     //dimensions of the rectangle
     var x = 10;
     var y = 10;
-    var w = 20;
-    var h = 30;
+    var width = 20;
+    var height = 30;
 
     //speed at which it moves
     var speed = 2;
 
     //grab the canvas and context
-    var canvas = document.getElementById("mycanvas");
+    var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
 
     //update the rectangle position
-    var update = function() {
+    function update() {
       x = x +  speed;
-    };
+    }
 
     //show it on the screen
-    var draw = function() {
+    function draw() {
       ctx.clearRect(0,0,500,300);
       ctx.fillStyle = "rgb(200, 0, 100)";
-      ctx.fillRect(x, y, w, h);
-    };
+      ctx.fillRect(x, y, width, height);
+    }
 
     //gets executed multiple times per second
-    var step = function() {
+    var step = function(){
 
       update();
       draw();
-
-      window.requestAnimationFrame(step);
+      var elmt = document.getElementById("myCanvas");
+      var attr= elmt.getAttribute("width");
+      if(x < attr) {
+        console.log("x:"+x);
+        window.requestAnimationFrame(step);  
+      }
+      else
+      {
+        x=0;
+        //go next line,
+        y = y + 50;
+        // if the y gets out of the canvas width, then break
+        var elmtY = document.getElementById("myCanvas");
+        var attrY= elmtY.getAttribute("height");
+        if(y<attrY){
+            console.log("y:"+y);
+             window.requestAnimationFrame(step);
+        }
+      }
+      
+      
+      
+      
     };
 
     //initial kick
