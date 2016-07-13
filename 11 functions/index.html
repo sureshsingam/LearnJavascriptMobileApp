@@ -8,13 +8,20 @@
 				var c = m * 100;
 				return c;
 			}
-
+			
+			// Creating a function to convert degrees to celsius
+			function toCelsius(F){
+				var temp = (F-32)*5/9;
+				return temp;
+			}
 			var a = 3;
 			console.log(converter(a));
 			console.log(converter(2.5));
 			console.log(converter(5.5));
 			console.log(converter(4.5));
 			console.log(converter(3.5));
+			
+			console.log("50 degrees in Fahrenheit is"+ toCelsius(50) + " in Celsius");
 
 		</script>
 	</body>
