@@ -17,7 +17,8 @@
     console.log(4);
 
     var i = 1;
-
+    var canvasHeight = document.getElementById("mycanvas").getAttribute("height");
+    
     while(i <= 1000) {
       console.log(i);
       i = i + 1;
@@ -35,28 +36,36 @@
         y: 100, //y coordinate
         speedY: 1, //speed in Y
         w: 40, //width
-        h: 40 //heght
+        h: 40, //heght
+        movingForward:true,
+        movingBackward:false
       },
       {
         x: 260,
         y: 100,
         speedY: 2,
         w: 40,
-        h: 40
+        h: 40,
+        movingForward:true,
+        movingBackward:false
       },
       {
         x: 380,
         y: 100,
         speedY: 3,
         w: 40,
-        h: 40
+        h: 40,
+        movingForward:true,
+        movingBackward:false        
       },
       {
         x: 450,
         y: 100,
         speedY: 7,
         w: 40,
-        h: 40
+        h: 40,
+        movingForward:true,
+        movingBackward:false        
       }
     ];
 
@@ -70,10 +79,32 @@
       //update the position of each enemy
       var j = 0;
       var n = enemies.length;
-
+      
       while(j < n) {
         //enemies[j].y = enemies[j].y + enemies[j].speedY;
-        enemies[j].y += enemies[j].speedY;
+        
+        if(enemies[j].movingForward)
+        {
+          enemies[j].y += enemies[j].speedY;
+        }
+        if(enemies[j].movingBackward){
+          enemies[j].y -= enemies[j].speedY;
+        }
+
+        if(enemies[j].y >= canvasHeight){
+        enemies[j].movingForward = false;
+        enemies[j].movingBackward = true;
+        console.log(enemies[j].movingForward);
+        console.log(enemies[j].movingBackward);
+        }
+        if(enemies[j].y < 0){
+        enemies[j].movingForward = true;
+        enemies[j].movingBackward = false;
+        console.log("Moving Back" + enemies[j].x + "," + enemies[j].y + enemies[j].movingForward);
+        console.log("Moving Back" + enemies[j].x +"," + enemies[j].y + enemies[j].movingBackward);        
+        }
+        
+
         j++;
       }
     };
