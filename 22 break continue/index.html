@@ -13,11 +13,14 @@
     for(var i = 0; i < l; i++) {
 
       if(numbers[i] < 0) {
+      console.log("continue"+numbers[i]);
         continue;
       }
 
       if(numbers[i] > 100) {
+      console.log("break"+numbers[i]);
         break;
+      
       }
 
       console.log(numbers[i]);
