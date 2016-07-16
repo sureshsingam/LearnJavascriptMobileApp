@@ -63,13 +63,13 @@
         element.y += element.speedY;
         
         //check borders
-        if(element.y <= 10) {
-          element.y = 10;
+        if(element.y <= 0) {
+         element.y = 0;
           //element.speedY = element.speedY * -1;
           element.speedY *= -1;
         }
-        else if(element.y >= GAME_HEIGHT - 50) {
-          element.y = GAME_HEIGHT - 50;
+        else if(element.y >= GAME_HEIGHT ) {
+          element.y = GAME_HEIGHT;
           element.speedY *= -1;
         }
       });
