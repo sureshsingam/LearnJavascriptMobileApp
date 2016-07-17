@@ -74,17 +74,17 @@
         y: 160,
         w: 50,
         h: 36
-      }
+      };
 
       var sprites = {};
 
       var movePlayer = function() {
         player.isMoving = true;
-      }
+      };
 
       var stopPlayer = function() {
         player.isMoving = false;
-      }
+      };
       
       //grab the canvas and context
       var canvas = document.getElementById("mycanvas");
@@ -133,8 +133,34 @@
 
           ///////////////////////////////
           */
+        
+        //increase the level variable once you reach the goal
+        alert("Congratulations, you can proceed to the next level" + (level+1) );
+        level++;
+        
+        /* Player will now start in the original position, so you have to reset the player's original position */
+        player.x=10;
+        player.y=160;
+        // Also need to make sure that when it starts, the player is not moving automatically!
+        player.isMoving = false;
 
-
+        // The enemies will also now be faster.
+        
+        enemies.forEach(function (element,index)
+          {
+            //if enemy speedY is positive, then simply increase the speed.
+            if(element.speedY > 0){
+              element.speedY++;              
+            }
+            else{
+              // speed of Enemy is negative
+              element.speedY--;
+            }
+          }
+                        
+                        
+                        
+        );
             
         }
 
@@ -213,7 +239,7 @@
         var closeOnWidth = Math.abs(rect1.x - rect2.x) <= Math.max(rect1.w, rect2.w);
         var closeOnHeight = Math.abs(rect1.y - rect2.y) <= Math.max(rect1.h, rect2.h);
         return closeOnWidth && closeOnHeight;
-      }
+      };
 
       //initial kick
       load();
