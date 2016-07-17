@@ -70,15 +70,15 @@
         y: 160,
         w: 50,
         h: 36
-      }
+      };
 
       var movePlayer = function() {
         player.isMoving = true;
-      }
+      };
 
       var stopPlayer = function() {
         player.isMoving = false;
-      }
+      };
       
       //grab the canvas and context
       var canvas = document.getElementById("mycanvas");
@@ -180,7 +180,7 @@
         var closeOnWidth = Math.abs(rect1.x - rect2.x) <= Math.max(rect1.w, rect2.w);
         var closeOnHeight = Math.abs(rect1.y - rect2.y) <= Math.max(rect1.h, rect2.h);
         return closeOnWidth && closeOnHeight;
-      }
+      };
 
       //initial kick
       step();
