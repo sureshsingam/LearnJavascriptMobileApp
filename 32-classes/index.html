@@ -7,7 +7,7 @@
 			var Monster = function() {
 				console.log('a new monster is being created');
 
-				this.energy = Math.random() * 100;
+				this.energy = parseInt(Math.random() * 100);
 
 				/*this.roar = function() {
 					console.log('RRROAARR');
@@ -21,7 +21,7 @@
 			Monster.prototype.getStronger = function() {
 				//this.energy = this.energy * 2;
 				this.energy *=  2;
-			}
+			};
 
 
 			var enemyLevel1 = new Monster();
